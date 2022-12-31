@@ -9,9 +9,11 @@ class code extends StatefulWidget {
 }
 
 class _codeState extends State<code> {
-  String v = "0";
-  int a = 0, b = 0, c = 0;
+  String v = "",o="",f="",s="",ans="";
 
+  double a = 0, b = 0;
+  double an=0 ;
+  bool check=true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,15 +28,31 @@ class _codeState extends State<code> {
               height: 120,
               width: double.infinity,
               alignment: Alignment.bottomRight,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+              child: Column(
                 children: [
-                  Text(
-                    "$v",
-                    style: TextStyle(
-                      fontSize: 80,
-                      color: Colors.white,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "$s $o $f",
+                        style: TextStyle(
+                          fontSize: 80,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      check==true?Text(""):Text(
+                        "$an",
+                        style: TextStyle(
+                          fontSize: 80,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -65,7 +83,11 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            v="0";
+                            check=true;
+                            s="";
+                            o="";
+                            f="";
+                            an=0;
                           });
                         },
                         child: Container(
@@ -91,7 +113,7 @@ class _codeState extends State<code> {
                           setState(() {
                             if(v!="0")
                             {
-                              v="$v"+"%";
+                              o="%";
                             }
                           });
                         },
@@ -114,7 +136,7 @@ class _codeState extends State<code> {
                           setState(() {
                             if(v!="0")
                             {
-                              v="$v"+"/";
+                              o=o+"/";
                             }
                           });
                         },
@@ -140,13 +162,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="7";
+                              if(f=="0")
+                                {
+                                  f="7";
+
+                                }
+                              else
+                              {
+                                f=f+"7";
+                              }
                             }
                             else
                             {
-                              v="$v"+"7";
+                              if(s=="0")
+                              {
+                                s="7";
+
+                              }
+                              else
+                              {
+                                s=s+"7";
+                              }
                             }
                           });
                         },
@@ -167,13 +205,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="8";
+                              if(f=="0")
+                              {
+                                f="8";
+
+                              }
+                              else
+                              {
+                                f=f+"8";
+                              }
                             }
                             else
                             {
-                              v="$v"+"8";
+                              if(s=="0")
+                              {
+                                s="8";
+
+                              }
+                              else
+                              {
+                                s=s+"8";
+                              }
                             }
                           });
                         },
@@ -194,13 +248,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="9";
+                              if(f=="0")
+                              {
+                                f="9";
+
+                              }
+                              else
+                              {
+                                f=f+"9";
+                              }
                             }
                             else
                             {
-                              v="$v"+"9";
+                              if(s=="0")
+                              {
+                                s="9";
+
+                              }
+                              else
+                              {
+                                s=s+"9";
+                              }
                             }
                           });
                         },
@@ -223,7 +293,7 @@ class _codeState extends State<code> {
                           setState(() {
                             if(v!="0")
                             {
-                              v="$v"+"*";
+                              o=o+"*";
                             }
                           });
                         },
@@ -250,13 +320,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="4";
+                              if(f=="0")
+                              {
+                                f="4";
+
+                              }
+                              else
+                              {
+                                f=f+"4";
+                              }
                             }
                             else
                             {
-                              v="$v"+"4";
+                              if(s=="0")
+                              {
+                                s="4";
+
+                              }
+                              else
+                              {
+                                s=s+"4";
+                              }
                             }
                           });
                         },
@@ -277,13 +363,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="5";
+                              if(f=="0")
+                              {
+                                f="5";
+
+                              }
+                              else
+                              {
+                                f=f+"5";
+                              }
                             }
                             else
                             {
-                              v="$v"+"5";
+                              if(s=="0")
+                              {
+                                s="5";
+
+                              }
+                              else
+                              {
+                                s=s+"5";
+                              }
                             }
                           });
                         },
@@ -304,13 +406,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="6";
+                              if(f=="0")
+                              {
+                                f="6";
+
+                              }
+                              else
+                              {
+                                f=f+"6";
+                              }
                             }
                             else
                             {
-                              v="$v"+"6";
+                              if(s=="0")
+                              {
+                                s="6";
+
+                              }
+                              else
+                              {
+                                s=s+"6";
+                              }
                             }
                           });
                         },
@@ -333,7 +451,7 @@ class _codeState extends State<code> {
                           setState(() {
                             if(v!="0")
                             {
-                              v="$v"+"-";
+                              o=o+"-";
 
                             }
                           });
@@ -360,13 +478,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="1";
+                              if(f=="0")
+                              {
+                                f="1";
+
+                              }
+                              else
+                              {
+                                f=f+"1";
+                              }
                             }
                             else
                             {
-                              v="$v"+"1";
+                              if(s=="0")
+                              {
+                                s="1";
+
+                              }
+                              else
+                              {
+                                s=s+"1";
+                              }
                             }
                           });
                         },
@@ -387,13 +521,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="2";
+                              if(f=="0")
+                              {
+                                f="2";
+
+                              }
+                              else
+                              {
+                                f=f+"2";
+                              }
                             }
                             else
                             {
-                              v="$v"+"2";
+                              if(s=="0")
+                              {
+                                s="2";
+
+                              }
+                              else
+                              {
+                                s=s+"2";
+                              }
                             }
                           });
                         },
@@ -414,13 +564,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v=="0")
+                            if(o=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="3";
+                              if(f=="0")
+                              {
+                                f="3";
+
+                              }
+                              else
+                              {
+                                f=f+"3";
+                              }
                             }
                             else
                             {
-                              v="$v"+"3";
+                              if(s=="0")
+                              {
+                                s="3";
+
+                              }
+                              else
+                              {
+                                s=s+"3";
+                              }
                             }
                           });
                         },
@@ -443,7 +609,7 @@ class _codeState extends State<code> {
                           setState(() {
                             if(v!="0")
                             {
-                              v="$v"+"+";
+                              o=o+"+";
                             }
                           });
                         },
@@ -469,9 +635,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v!="0")
+                            if(0=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v="$v"+"00";
+                              if(v=="0")
+                              {
+                                f="00";
+
+                              }
+                              else
+                              {
+                                f=f+"00";
+                              }
+                            }
+                            else
+                            {
+                              if(v=="0")
+                              {
+                                s="00";
+
+                              }
+                              else
+                              {
+                                s=s+"00";
+                              }
                             }
                           });
                         },
@@ -492,9 +678,29 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            if(v!="0") 
+                            if(0=="+"||o=="-"||o=="*"||o=="/"||o=="%")
                             {
-                              v = "$v" + "0";
+                              if(v=="0")
+                              {
+                                f="0";
+
+                              }
+                              else
+                              {
+                                f=f+"0";
+                              }
+                            }
+                            else
+                            {
+                              if(v=="0")
+                              {
+                                s="0";
+
+                              }
+                              else
+                              {
+                                s=s+"0";
+                              }
                             }
                             });
                         },
@@ -513,7 +719,30 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                              v="$v"+".";
+                            if(0=="+"||o=="-"||o=="*"||o=="/"||o=="%")
+                            {
+                              if(v=="0")
+                              {
+                                f=".";
+
+                              }
+                              else
+                              {
+                                f=f+".";
+                              }
+                            }
+                            else
+                            {
+                              if(v=="0")
+                              {
+                                s=".";
+
+                              }
+                              else
+                              {
+                                s=s+".";
+                              }
+                            }
                           });
                         },
                         child: Container(
@@ -533,8 +762,30 @@ class _codeState extends State<code> {
                       InkWell(
                         onTap: () {
                           setState(() {
-                            
-                              v="$v"+"=";
+                            check=false;
+                            a  =  double.parse("$f");
+                            b  =  double.parse("$s");
+                            if(o=="+")
+                              {
+                                an= b+a;
+                              }
+                            else if(o=="-")
+                              {
+                                an=b-a;
+                              }
+                            else if(o=="*")
+                              {
+                                an=a*b;
+                              }
+                            else if(o=="%")
+                              {
+                                an=(b*a)/100;
+                              }
+                            else if(o=="/")
+                              {
+                                an=b/a;
+                              }
+
                           });
                         },
                         child: Container(
